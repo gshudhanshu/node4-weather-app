@@ -6,12 +6,12 @@ const forecast = (longitude, latitude, callback) => {
 
     axios.get(url)
     .then (({data}) => {
-        // console.log(response)
+        console.log(data.current)
         if(data.location){
             callback(undefined, 
                 /*chalk.bgGreen.black.bold*/('It is currently ' +
                 data.current.temp_c + ' degree out. There is ' +
-                data.current.precip_in + ' chance of rain')
+                data.current.precip_in + ' chance of rain. Wind direction '+ data.current.wind_dir)
             )
         } else {
             callback('Unable to find location. Try another search', undefined)
