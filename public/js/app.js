@@ -14,7 +14,7 @@ searchFrom.addEventListener('submit', (event)=>{
     msgTwo.textContent = 'Loading...'
     msgThree.textContent = 'Loading...'
 
-    fetch('http://localhost:3000/weather?address='+searchInput.value)
+    fetch('/weather?address='+searchInput.value)
     .then((response)=>{
     response.json().then((data)=>{
         if(data.error){
